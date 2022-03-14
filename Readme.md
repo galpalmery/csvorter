@@ -16,11 +16,13 @@ mvn clean install
 ```
 or use your IDE to build with maven.
 
-to create javadoc site run
+the maven build will create an executable jar under the target folder
+
+to create a javadoc site under target\site, run the following command
 ```
 mvn javadoc:javadoc
 ```
-the maven build will create an executable jar under the target folder
+
 to run the program run 
 ```
 java -jar csvsorter-1.0-SNAPSHOT.jar <args>

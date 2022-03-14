@@ -1,4 +1,4 @@
-## csvsorter
+## **csvsorter**
 csvsorter sorts a csv input file using external sorting merge sort algorithm.
 
 ## Prerequisites

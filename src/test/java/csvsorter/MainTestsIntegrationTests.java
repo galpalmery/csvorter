@@ -1,5 +1,6 @@
 package csvsorter;
 
+import com.google.common.collect.Ordering;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.junit.jupiter.MockitoExtension;
@@ -7,11 +8,8 @@ import org.mockito.junit.jupiter.MockitoExtension;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
-import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Collectors;
-
-import static org.junit.jupiter.api.Assertions.assertIterableEquals;
 
 @ExtendWith(MockitoExtension.class)
 public class MainTestsIntegrationTests {
@@ -23,13 +21,8 @@ public class MainTestsIntegrationTests {
         String[] args = {"-in", inputCSVFile, "-key", "0", "-max", "2", "-out", outputFile};
         Main.main(args);
 
-        List<String> inputFileAsListSortedByJavaStreams = Files.lines(Paths.get(inputCSVFile))
-                .sorted(Comparator.naturalOrder())
-                .collect(Collectors.toList());
-
         List<String> outputFileOfcsvsorter = Files.lines(Paths.get(outputFile)).collect(Collectors.toList());
-
-        assertIterableEquals(inputFileAsListSortedByJavaStreams, outputFileOfcsvsorter);
+        assert Ordering.natural().isOrdered(outputFileOfcsvsorter);
     }
 
     @Test
@@ -39,12 +32,7 @@ public class MainTestsIntegrationTests {
         String[] args = {"-in", inputCSVFile, "-key", "0", "-max", "3", "-out", outputFile};
         Main.main(args);
 
-        List<String> inputFileAsListSortedByJavaStreams = Files.lines(Paths.get(inputCSVFile))
-                .sorted(Comparator.naturalOrder())
-                .collect(Collectors.toList());
-
         List<String> outputFileOfcsvsorter = Files.lines(Paths.get(outputFile)).collect(Collectors.toList());
-
-        assertIterableEquals(inputFileAsListSortedByJavaStreams, outputFileOfcsvsorter);
+        assert Ordering.natural().isOrdered(outputFileOfcsvsorter);
     }
 }

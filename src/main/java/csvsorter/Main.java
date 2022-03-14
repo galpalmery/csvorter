@@ -99,10 +99,9 @@ public class Main {
     private static Properties loadAppProperties() throws IOException {
         URL resource = Thread.currentThread().getContextClassLoader().getResource("");
         String appConfigPath;
-        if(resource == null) {
+        if (resource == null) {
             appConfigPath = Constants.APP_PROPERTIES_FILE_NAME;
-        }
-        else{
+        } else {
             String rootPath = resource.getPath();
             appConfigPath = rootPath + Constants.APP_PROPERTIES_FILE_NAME;
         }

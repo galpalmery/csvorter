@@ -69,6 +69,7 @@ define the following argument in your IDE's run configuration (key and max are j
    2. iterate over both parts and compare each entry according to the sorting key
    3. set the part list with the smaller entry (lexicographically) on the left index or the grater entry on the right index.
    4. advance the indices accordingly until all the list is sorted and return it.  
+
 **reduce**
 3. take each 2 sorted parts - output of the map part, that are now written to files  
 4. read line by line, and compare the lines according to the sorting key

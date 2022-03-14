@@ -1,4 +1,4 @@
-#csvsorter
+### csvsorter
 csvsorter sorts a csv input file using external sorting merge sort algorithm.
 
 ## Prerequisites
@@ -7,7 +7,7 @@ csvsorter sorts a csv input file using external sorting merge sort algorithm.
 
 ## Getting Started
 get the sources of this project to your local machine.
-git repo -->
+git repo --> https://github.com/galpalmery/csvorter
 
 first, build the project, open terminal where pom.xml file is, and run:
 ```

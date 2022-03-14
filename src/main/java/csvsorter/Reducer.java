@@ -62,8 +62,6 @@ public class Reducer {
             //if tempFileName1 is the last file in this reduce iteration, then rename it so that it will be merged in the next iteration
             if (i + 1 == files.size()) {
                 File mergeResultFile = new File(mergeResultFileName);
-                //DINO CHANGE THIS TO COPY TO SEE ALL THE FILES ...
-                //                FileUtils.copyFile(files.get(i), mergeResultFile);
                 FileUtils.moveFile(files.get(i), mergeResultFile);
                 break;
             }

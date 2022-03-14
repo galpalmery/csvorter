@@ -77,18 +77,17 @@ public class Reducer {
         try {
             taskExecutor.awaitTermination(Long.MAX_VALUE, TimeUnit.DAYS);//let's wait till the end of time
         } catch (InterruptedException e) {
-            logger.severe(e.getMessage());
+            logger.severe(String.valueOf(e));
         }
 
         return reduceRec(tempFilesDir, Constants.REDUCE_SUFFIX + reduceDepth, reduceDepth + 1);
     }
 
     private List<File> findFilesForThisIteration(String tempFilesDir, String fileSuffix) throws IOException {
-        List<File> files = Files.list(Paths.get(tempFilesDir))
+        return Files.list(Paths.get(tempFilesDir))
                 .map(Path::toFile)
                 .filter(file -> file.getName().endsWith(fileSuffix))
                 .collect(Collectors.toList());
-        return files;
     }
 
     private String createMergeResultFileName(String tempFilesDir, int reduceDepth, int partNumber) {

@@ -48,11 +48,11 @@ public class Main {
         stopWatch.start();
 
         //map - divide the input file to smaller files the size of maxRecordsNumber and sort each part
-        Mapper mapper = new Mapper(Integer.valueOf(sortingKeyIndexStr), Integer.valueOf(maxRecordsNumberStr));
+        Mapper mapper = new Mapper(Integer.parseInt(sortingKeyIndexStr), Integer.parseInt(maxRecordsNumberStr));
         mapper.map(inputCSVFile, tempFilesDir);
 
         //reduce - sort the parts using external merge sort
-        Reducer reducer = new Reducer(Integer.valueOf(sortingKeyIndexStr));
+        Reducer reducer = new Reducer(Integer.parseInt(sortingKeyIndexStr));
         String sortedOutputFilePath = reducer.reduceRec(tempFilesDir, Constants.MAP_SUFFIX, 1);
 
         //handle the final output and clean temporary files according to input args or default configuration
@@ -139,7 +139,7 @@ public class Main {
         try {
             cmd = parser.parse(options, args);
         } catch (ParseException e) {
-            logger.severe(e.getMessage());
+            logger.severe(String.valueOf(e));
             formatter.printHelp("csvsorter", options);
             System.exit(1);
         }

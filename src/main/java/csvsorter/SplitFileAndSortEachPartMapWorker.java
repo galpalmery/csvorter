@@ -57,10 +57,11 @@ class SplitFileAndSortEachPartMapWorker extends MapReduceWorkersBase {
             writer.close();
 
         } catch (IOException e) {
-            logger.severe(e.getMessage());
+            logger.severe(String.valueOf(e));
         }
     }
 
+    @SuppressWarnings("ConstantConditions")
     private ArrayList<String> mergeSortPart(ArrayList<String> part) {
         ArrayList<String> left = new ArrayList<>();
         ArrayList<String> right = new ArrayList<>();
@@ -122,7 +123,7 @@ class SplitFileAndSortEachPartMapWorker extends MapReduceWorkersBase {
         try {
             writer.write(line + "\r\n");
         } catch (IOException e) {
-            logger.severe(e.getMessage());
+            logger.severe(String.valueOf(e));
             throw new RuntimeException(e);
         }
     }

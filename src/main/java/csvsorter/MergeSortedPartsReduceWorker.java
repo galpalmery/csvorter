@@ -61,7 +61,7 @@ class MergeSortedPartsReduceWorker extends MapReduceWorkersBase {
             fileReader2.close();
             logger.info("Done Merging " + inputFile1 + " and " + inputFile2);
         } catch (IOException e) {
-            logger.severe(e.getMessage());
+            logger.severe(String.valueOf(e));
         }
     }
 }

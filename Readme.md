@@ -22,7 +22,7 @@ mvn javadoc:javadoc
 the maven build will create an executable jar under the target folder
 to run the program run 
 ```
-java -jar csvSorter-1.0-SNAPSHOT.jar <args>
+java -jar csvsorter-1.0-SNAPSHOT.jar <args>
 ```
 or use you IDE to run Main class.
 you will need to pass 3 input parameters, see usage:

@@ -51,13 +51,12 @@ public class Mapper {
         try {
             taskExecutor.awaitTermination(Long.MAX_VALUE, TimeUnit.DAYS);//let's wait till the end of time
         } catch (InterruptedException e) {
-            logger.severe(e.getMessage());
+            logger.severe(String.valueOf(e));
         }
     }
 
     private long countIInitialParts(String inputCSVFile, int maxRecordsNumber) throws IOException {
-        long inputCSVFileLinesCounter = Files.lines(Paths.get(inputCSVFile)).count();;
-        Files.lines(Paths.get(inputCSVFile)).count();
+        long inputCSVFileLinesCounter = Files.lines(Paths.get(inputCSVFile)).count();
         if (inputCSVFileLinesCounter % maxRecordsNumber != 0)
             return (inputCSVFileLinesCounter / maxRecordsNumber) + 1;
         else

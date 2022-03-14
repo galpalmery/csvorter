@@ -48,7 +48,7 @@ another example, with output argument:
 java -jar csvsorter-1.0-SNAPSHOT.jar -in test-classes\employee_info.csv -key 2 -max 2000 -out path/to/output/out.csv 
 ````
 
-in case you want to run the project from your ide and still use the sample file, 
+in case you want to run the project from your IDE and still use the sample file, 
 define the following argument in your IDE's run configuration (key and max are just a example):
 ```
 -in=src\test\resources\employee_info.csv -key=2 -max=2000

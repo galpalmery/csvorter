@@ -27,7 +27,7 @@ to run the program run
 ```
 java -jar csvsorter-1.0-SNAPSHOT.jar <args>
 ```
-or use you IDE to run Main class.
+or use your IDE to run Main class.
 you will need to pass 3 input parameters, see usage:
 ```
 usage: csvsorter
